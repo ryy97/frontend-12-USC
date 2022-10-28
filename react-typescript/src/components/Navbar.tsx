@@ -13,7 +13,11 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 
-const pages = ["HOME", "ABOUT", "CONTACT US"];
+const pages = [
+  { name: "HOME", url: "/" },
+  { name: "ABOUT", url: "/about" },
+  { name: "CONTACT US", url: "/contact" },
+];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const Navbar = () => {
@@ -75,8 +79,10 @@ const Navbar = () => {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                <MenuItem key={page.name} onClick={handleCloseNavMenu}>
+                  <Link to={page.url} style={{ textDecoration: "none" }}>
+                    <Typography textAlign="center">{page.name}</Typography>
+                  </Link>
                 </MenuItem>
               ))}
             </Menu>
@@ -107,19 +113,21 @@ const Navbar = () => {
             }}
           >
             {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{
-                  m: 2,
-                  color: "white",
-                  display: "block",
-                  fontSize: 18,
-                  fontWeight: 500,
-                }}
-              >
-                {page}
-              </Button>
+              <Link to={page.url} style={{ textDecoration: "none" }}>
+                <Button
+                  key={page.name}
+                  onClick={handleCloseNavMenu}
+                  sx={{
+                    m: 2,
+                    color: "white",
+                    display: "block",
+                    fontSize: 18,
+                    fontWeight: 500,
+                  }}
+                >
+                  {page.name}
+                </Button>
+              </Link>
             ))}
           </Box>
 
