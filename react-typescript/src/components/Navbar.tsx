@@ -12,9 +12,11 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
 const pages = [
   { name: "HOME", url: "/" },
+  { name: "PRODUCTS", url: "/products" },
   { name: "ABOUT", url: "/about" },
   { name: "CONTACT US", url: "/contact" },
 ];
@@ -113,7 +115,11 @@ const Navbar = () => {
             }}
           >
             {pages.map((page) => (
-              <Link to={page.url} style={{ textDecoration: "none" }}>
+              <Link
+                to={page.url}
+                style={{ textDecoration: "none" }}
+                key={page.name}
+              >
                 <Button
                   key={page.name}
                   onClick={handleCloseNavMenu}
@@ -131,12 +137,43 @@ const Navbar = () => {
             ))}
           </Box>
 
-          <Box sx={{ flexGrow: 0 }}>
+          <Box
+            sx={{
+              flexGrow: 0,
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
             <Tooltip title="Open settings">
               <Link to="/login">
                 <PersonOutlineIcon fontSize="large" sx={{ color: "white" }} />
               </Link>
             </Tooltip>
+            <Link
+              to="/cart"
+              style={{
+                textDecoration: "none",
+              }}
+            >
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "center",
+                }}
+              >
+                <ShoppingCartIcon
+                  sx={{ fontSize: 30, color: "white", pl: 3 }}
+                />
+                <Typography
+                  sx={{
+                    color: "white",
+                  }}
+                >
+                  My Cart
+                </Typography>
+              </Box>
+            </Link>
             <Menu
               sx={{ mt: "45px" }}
               id="menu-appbar"

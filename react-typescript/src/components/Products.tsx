@@ -2,6 +2,14 @@ import React, { useState, useEffect } from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
+import {
+  CardMedia,
+  CardContent,
+  CardActionArea,
+  Typography,
+  IconButton,
+} from "@mui/material";
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 
 const Products = () => {
   const [products, setProducts] = useState<any[]>([]);
@@ -26,17 +34,64 @@ const Products = () => {
             <Card
               sx={{
                 height: 290,
-                width: 200,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
+                width: 290,
               }}
             >
-              <img
+              <CardActionArea
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                }}
+              >
+                <CardMedia
+                  component="img"
+                  style={{
+                    width: "auto",
+                    maxHeight: "200px",
+                  }}
+                  image={product.image}
+                  alt={product.id}
+                />
+                {/* <img
                 src={product.image}
                 alt={product.id}
                 style={{ width: 165 }}
-              />
+              /> */}
+              </CardActionArea>
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                }}
+              >
+                <Box
+                  sx={{ display: "flex", flexDirection: "column", flexGrow: 2 }}
+                >
+                  <CardContent>
+                    <Typography
+                      variant="body1"
+                      color="text.primary"
+                      component="a"
+                      // href=""
+                      sx={{
+                        textDecoration: "none",
+                      }}
+                    >
+                      {product.title.length > 45
+                        ? product.title.slice(0, 45) + "..."
+                        : product.title}
+                    </Typography>
+                    <Typography sx={{ fontSize: "16px" }}>
+                      ${product.price}
+                    </Typography>
+                  </CardContent>
+                </Box>
+                <IconButton>
+                  <AddShoppingCartIcon />
+                </IconButton>
+              </Box>
             </Card>
           </Grid>
         ))}
