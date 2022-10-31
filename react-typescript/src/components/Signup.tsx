@@ -1,7 +1,6 @@
 import React from "react";
 import "./Login.css";
-import { Link } from "react-router-dom";
-const Login = () => {
+const Signup = () => {
   return (
     <main>
       <div className="login_mainBackground">
@@ -38,9 +37,6 @@ const Login = () => {
             </div>
             <div className="login_button_container">
               <button className="login_button">continue</button>
-              <Link to="/signup" style={{ textDecoration: "none" }}>
-                <button className="login_button">create your account</button>
-              </Link>
             </div>
           </div>
         </div>
@@ -54,4 +50,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Signup;
