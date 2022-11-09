@@ -8,7 +8,7 @@ const Signup = () => {
         <div className={styles.login_content}>
           <div className={styles.login_container}>
             <div className={styles.login_title}>
-              <h1>Sign in</h1>
+              <h1>Sign up</h1>
             </div>
             <div>
               <form className={styles.login_form}>
