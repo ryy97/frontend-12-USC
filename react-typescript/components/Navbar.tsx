@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -82,7 +82,7 @@ const Navbar = () => {
             >
               {pages.map((page) => (
                 <MenuItem key={page.name} onClick={handleCloseNavMenu}>
-                  <Link to={page.url} style={{ textDecoration: "none" }}>
+                  <Link href={page.url}>
                     <Typography textAlign="center">{page.name}</Typography>
                   </Link>
                 </MenuItem>
@@ -115,11 +115,7 @@ const Navbar = () => {
             }}
           >
             {pages.map((page) => (
-              <Link
-                to={page.url}
-                style={{ textDecoration: "none" }}
-                key={page.name}
-              >
+              <Link href={page.url} key={page.name}>
                 <Button
                   key={page.name}
                   onClick={handleCloseNavMenu}
@@ -145,12 +141,12 @@ const Navbar = () => {
             }}
           >
             <Tooltip title="Open settings">
-              <Link to="/login">
+              <Link href="/login">
                 <PersonOutlineIcon fontSize="large" sx={{ color: "white" }} />
               </Link>
             </Tooltip>
             <Link
-              to="/cart"
+              href="/cart"
               style={{
                 textDecoration: "none",
               }}
