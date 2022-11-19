@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "title": "Enjoy This Offer Today",
+    "subtitle": "New Collection <br /> Sale 40%",
+    "image": "/images/carrouselBackground-01.png",
+    "link": "/products",
+    "textColor": "black"
+  },
+  {
+    "id": 2,
+    "title": "Enjoy This Offer Today",
+    "subtitle": "New Collection <br /> Sale 20%",
+    "image": "/images/carrouselBackground-02.jpg",
+    "link": "/products",
+    "textColor": "white"
+  }
+]
