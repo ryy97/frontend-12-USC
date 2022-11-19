@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "image": "/images/spotlight-01.jpg",
+    "title": "New Arrivals",
+    "subtitle": "Choose your products here",
+    "link": "/products"
+  },
+  {
+    "id": 2,
+    "image": "/images/spotlight-02.jpg",
+    "title": "Featured Products",
+    "subtitle": "Choose your products here",
+    "link": "/products"
+  },
+  {
+    "id": 3,
+    "image": "/images/spotlight-03.jpg",
+    "title": "Best Seller",
+    "subtitle": "Choose your products here",
+    "link": "/products"
+  }
+]

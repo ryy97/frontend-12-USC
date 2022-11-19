@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "image": "/images/featured-01.jpg",
+    "title": "Featured Products",
+    "subtitle": "Choose Your Products Here",
+    "link": "/products",
+    "textAlign": "right"
+  },
+  {
+    "id": 2,
+    "image": "/images/featured-03.jpg",
+    "title": "New Products",
+    "subtitle": "Choose Your Products Here",
+    "link": "/products",
+    "textAlign": "left"
+  }
+]
