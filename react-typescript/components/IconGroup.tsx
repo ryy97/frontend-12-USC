@@ -3,6 +3,7 @@ import Link from "next/link";
 import { connect } from "react-redux";
 import Cart from "./Cart";
 import { CartData, Currency } from "../types";
+import AuthPage from "./AuthPage";
 // import { deleteFromCart } from "../../redux/actions/cartActions";
 
 interface IconGroupProps {
@@ -31,6 +32,8 @@ const IconGroup = ({
     offcanvasMobileMenu.classList.add("active");
   };
 
+  const [open, setOpen] = React.useState(false);
+
   return (
     <div
       className={`header-right-wrap ${iconWhiteClass ? iconWhiteClass : ""}`}
@@ -58,16 +61,17 @@ const IconGroup = ({
         <div className="account-dropdown">
           <ul>
             <li>
-              <Link href="/login">Login</Link>
+              <Link href="/Login">Login</Link>
             </li>
             <li>
-              <Link href="/signup">Sign Up</Link>
+              <Link href="/Signup">Sign Up</Link>
             </li>
             <li>
               <Link href="/my-account">My Account</Link>
             </li>
           </ul>
         </div>
+        {/* <AuthPage open={open} setOpen={setOpen} /> */}
       </div>
       <div className="same-style header-wishlist">
         <Link href="/wishlist">
